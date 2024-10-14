@@ -4,7 +4,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 export default function TabLayout() {
   return (
     <Tabs
-    screenOptions={{
+      screenOptions={{
         tabBarActiveTintColor: '#ffd33d',
         headerStyle: {
           backgroundColor: '#25292e',
@@ -12,7 +12,7 @@ export default function TabLayout() {
         headerShadowVisible: false,
         headerTintColor: '#fff',
         tabBarStyle: {
-        backgroundColor: '#25292e',
+          backgroundColor: '#25292e',
         },
       }}
     >
@@ -20,6 +20,7 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'Home',
+          headerTitle: 'Image Descriptor',
           tabBarIcon: ({ color, focused }) => (
             <Ionicons name={focused ? 'home-sharp' : 'home-outline'} color={color} size={24} />
           ),
@@ -30,7 +31,7 @@ export default function TabLayout() {
         options={{
           title: 'About',
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons name={focused ? 'information-circle' : 'information-circle-outline'} color={color} size={24}/>
+            <Ionicons name={focused ? 'information-circle' : 'information-circle-outline'} color={color} size={24} />
           ),
         }}
       />

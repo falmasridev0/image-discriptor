@@ -1,5 +1,5 @@
 import { View, Pressable, StyleSheet } from 'react-native';
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 type Props = {
   onPress: () => void;
@@ -9,7 +9,7 @@ export default function CircleButton({ onPress }: Props) {
   return (
     <View style={styles.circleButtonContainer}>
       <Pressable style={styles.circleButton} onPress={onPress}>
-        <MaterialIcons name="add" size={38} color="#25292e" />
+      <MaterialCommunityIcons name="star-four-points" size={38} color="black" />
       </Pressable>
     </View>
   );

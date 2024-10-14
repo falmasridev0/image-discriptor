@@ -3,7 +3,7 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 type Props = {
   label: string;
-  theme?: 'primary';
+  theme?: 'primary' | 'secondary';
   onPress?: () => void;
 };
 
@@ -17,6 +17,21 @@ export default function Button({ label, theme, onPress }: Props) {
         ]}>
         <Pressable style={[styles.button, { backgroundColor: '#fff' }]} onPress={onPress}>
           <FontAwesome name="picture-o" size={18} color="#25292e" style={styles.buttonIcon} />
+          <Text style={[styles.buttonLabel, { color: '#25292e' }]}>{label}</Text>
+        </Pressable>
+      </View>
+    );
+  }
+
+  if (theme === 'secondary') {
+    return (
+      <View
+        style={[
+          styles.secondaryButtonContainer,
+          { borderWidth: 2, borderColor: '#d3d3d3', borderRadius: 14 },
+        ]}>
+        <Pressable style={[styles.secondaryButton, { backgroundColor: '#f0f0f0' }]} onPress={onPress}>
+          <FontAwesome name="picture-o" size={16} color="#25292e" style={styles.buttonIcon} />
           <Text style={[styles.buttonLabel, { color: '#25292e' }]}>{label}</Text>
         </Pressable>
       </View>
@@ -41,8 +56,28 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 3,
   },
+  secondaryButtonContainer: {
+    width: 300,
+    height: 60,
+    marginHorizontal: 20,
+    marginTop: 10, // Add space between primary and secondary buttons
+    marginBottom: 10, // Add space between primary and secondary buttons
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 3,
+  },
   button: {
     borderRadius: 10,
+    marginVertical: 10,
+    width: '100%',
+    height: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+  },
+  secondaryButton: {
+    borderRadius: 10,
+    marginVertical: 10,
     width: '100%',
     height: '100%',
     alignItems: 'center',
