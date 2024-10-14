@@ -95,11 +95,10 @@ export default function Index() {
           Authorization: `Token ${REPLICATE_API_TOKEN}`,
         },
         body: JSON.stringify({
-          version: "8151e1c9f47e696fa316146a2e35812ccf79cfc9eba05b11c7f450155102af70",
+          version: "2e1dddc8621f72155f24cf2e0adbde548458d3cab9f00c0139eea840d0ac4746",
           input: {
-            mode: "best",
+            task: "image_captioning",
             image: imageUrl,
-            clip_model_name: "ViT-L-14/openai",
           },
         }),
       });
@@ -183,7 +182,7 @@ export default function Index() {
             <Text style={styles.loadingText}>Genrateing...</Text>
           )}
           {output && (
-            <Text style={styles.outputText}>Output: {output}</Text>
+            <Text style={styles.outputText}>{output}</Text>
           )}
         </View>
       ) : (
